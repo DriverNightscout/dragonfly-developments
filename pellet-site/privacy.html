@@ -32,9 +32,9 @@
 
         <h2>Summary (Plain English)</h2>
         <ul>
-          <li>The App is designed to work primarily with data stored on your device.</li>
-          <li>If you use household sharing (Pro feature), your household data is synced via Apple’s iCloud/CloudKit.</li>
-          <li>We do not run our own servers for your pellet data.</li>
+          <li>Your data is stored securely using Google Firebase (Firestore), hosted in the United Kingdom (London).</li>
+          <li>If you use household sharing (Pro feature), your household data is shared with members you invite.</li>
+          <li>All users require a Sign in with Apple account for cloud backup and data sync.</li>
           <li>We do not sell your data.</li>
           <li>We do not use third-party advertising or tracking SDKs.</li>
         </ul>
@@ -59,11 +59,12 @@
         <h2>Household Sharing (Pro Feature)</h2>
         <p>If you enable household sharing:</p>
         <ul>
-          <li>Household data is synced and shared with members you invite via <strong>Apple CloudKit (iCloud)</strong>.</li>
-          <li>Access is limited to participants you invite to the household.</li>
-          <li>CloudKit data is stored and secured by Apple within iCloud.</li>
+          <li>Household data is stored in Google Firebase (Firestore), hosted in the United Kingdom.</li>
+          <li>Access is limited to participants you invite to the household using invite codes.</li>
+          <li>Household data is synced in real time with members you invite.</li>
+          <li>Role-based access controls (Owner, Admin, Editor) are enforced server-side.</li>
         </ul>
-        <p>For more information, see Apple’s Privacy Policy.</p>
+        <p>For more information, see Google's Privacy Policy.</p>
 
         <h2>Data We Do Not Collect</h2>
         <p>We do not collect:</p>
@@ -71,6 +72,7 @@
           <li>Advertising identifiers</li>
           <li>Third-party analytics identifiers</li>
           <li>Location data</li>
+          <li>Your name or email (Sign in with Apple allows anonymous relay addresses)</li>
           <li>Your contacts</li>
         </ul>
         <p>We do not use third-party advertising or tracking services.</p>
@@ -81,17 +83,28 @@
         <h2>Data Retention and Deletion</h2>
         <p>You can delete your data at any time:</p>
         <ul>
-          <li>Use the app’s reset options in Settings to remove app data.</li>
-          <li>Uninstalling the App removes local data from your device.</li>
-          <li>If household sharing is enabled, the household admin can delete shared household data.</li>
+          <li>Use the account deletion option in the App to permanently delete your account and all associated data.</li>
+          <li>Uninstalling the App removes local data from your device, but cloud data remains until you delete your account.</li>
+          <li>If household sharing is enabled, the household owner can remove members and delete shared data.</li>
         </ul>
 
         <h2>Security</h2>
-        <p>Your data is protected using Apple platform security features:</p>
+        <p>Your data is protected by:</p>
         <ul>
+          <li>Firebase Security Rules enforcing role-based access to household data.</li>
+          <li>Encryption in transit (HTTPS/TLS) and at rest (Google Cloud encryption).</li>
           <li>On-device data is protected by iOS security and device encryption.</li>
-          <li>Shared household data is protected by iCloud/CloudKit security controls.</li>
+          <li>Authentication via Sign in with Apple.</li>
         </ul>
+
+        <h2>Third-Party Services</h2>
+        <p>The App uses the following third-party services:</p>
+        <ul>
+          <li>Firebase Authentication (Google) -- for user identity via Sign in with Apple.</li>
+          <li>Firebase Firestore (Google) -- for cloud data storage and real-time sync, hosted in europe-west2 (London, United Kingdom).</li>
+          <li>StoreKit (Apple) -- for in-app purchases.</li>
+        </ul>
+        <p>We do not use third-party advertising, analytics tracking, or data brokers. For information on how Google handles data, see Google's Privacy Policy.</p>
 
         <h2>Children’s Privacy</h2>
         <p>The App is intended for homeowners and is not directed to children. We do not knowingly collect personal information from children under 13.</p>
